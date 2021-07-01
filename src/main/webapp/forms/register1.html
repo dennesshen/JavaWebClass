@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <title>表單註冊</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css">
+        <link rel="icon" href="../icons/favicon.ico" type="image/x-icon" />
+    </head>
+    <body style="padding: 20px" >
+        <form class="pure-form" method = "post" action = "/JavaWeb20210531/controller/RegisterServlet1">
+            <fieldset>
+                <legend>表單註冊</legend>
+
+                <input type="text" placeholder="學員編號" name = "studentNumber" />
+                <select name ="testChoose">
+                    <option value = "1z0-808" selected>Java基礎認證</option>
+                    <option value = "1z0-809" selected>Java專業認證</option>
+                    <option value = "1z0-900" selected>Java Web認證</option>
+                </select>
+                <p />
+                考試時段（可複選）: &nbsp;
+                <input type ="checkbox" name ="times" value ="1"/>上午
+                <input type ="checkbox" name ="times" value ="2"/>下午
+                <input type ="checkbox" name ="times" value ="3"/>晚上
+                <p />
+                繳費狀況：
+                <input type ="Radio" name ="pay" value ="true"/>已繳費
+                <input type ="Radio" name ="pay" value ="false"/>未繳費
+                <p />
+                <textarea  name="memoText" rows="3" cols="30"></textarea>
+                <p />
+                <button type="submit" class="pure-button pure-button-primary">提交</button>
+                <button type="reset" class="pure-button pure-button-primary">清除</button>
+            </fieldset>
+        </form>
+
+    </body>
+</html>

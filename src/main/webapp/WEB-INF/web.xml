@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+    <!-- 宣告Filter-->
+    <filter>
+        <filter-name>login</filter-name>
+        <filter-class>com.filter.LogInFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>watermellon</filter-name>
+        <filter-class>com.filter.WatermarkFilter</filter-class>
+    </filter>
+    <filter>
+        <filter-name>PerformancFilter</filter-name>
+        <filter-class>com.filter.PerformanceFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>PerformancFilter</filter-name>
+        <url-pattern>/forms/*</url-pattern>
+        <url-pattern>/secure/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>login</filter-name>
+        <url-pattern>/secure/*</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>watermellon</filter-name>
+        <url-pattern>/secure/*</url-pattern>
+    </filter-mapping>
+    <!-- 宣告Servlet -->
+    <servlet>
+        <servlet-name>HelloGenericServlet</servlet-name>
+        <servlet-class>com.web.controller.HelloGenericServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>HelloHttpServlet</servlet-name>
+        <servlet-class>com.web.controller.HelloHttpServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <url-pattern>/hi</url-pattern>
+        <servlet-name>HelloGenericServlet</servlet-name>
+    </servlet-mapping>
+    <servlet-mapping>
+        <url-pattern>/hello</url-pattern>
+        <servlet-name>HelloHttpServlet</servlet-name>
+    </servlet-mapping>
+</web-app>
