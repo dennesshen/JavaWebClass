@@ -39,30 +39,11 @@ public class LongJobServletNoAsync extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         Delay delay = new Delay();
         Thread t = new Thread(delay);
-        System.out.println("Test1");
-        resp.getWriter().print("一");
-        resp.getWriter().flush();
-        t.start();
-        System.out.println("Test2");
-
-        resp.getWriter().print("二");
-        resp.getWriter().print("三");
-        resp.getWriter().flush();
-        t.start();
-        System.out.println("Test3");
-
-        resp.getWriter().print("四");
-        resp.getWriter().print("五");
-        resp.getWriter().print("六");
-        resp.getWriter().flush();
-        t.start();
-        System.out.println("Test4");
-
-        resp.getWriter().print("七");
-        resp.getWriter().print("八");
-        resp.getWriter().print("九");
-        resp.getWriter().print("十");
-        System.out.println("Test2");
+        for (int i = 0; i < 10; i++) {
+            resp.getWriter().print( (i+1)+"進行第"+(i+1)+"個工作"+"<p/>");
+            resp.getWriter().flush();
+            t.start();
+        }
     }
 
 }
