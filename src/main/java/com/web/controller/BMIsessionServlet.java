@@ -37,12 +37,12 @@ public class BMIsessionServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         HttpSession session = req.getSession(false);
         resp.getWriter().println("get ok");
-        resp.getWriter().println("session id"+session.getId());
-        resp.getWriter().println("cname :"+session.getAttribute("cname"));
-        resp.getWriter().println("weight :"+session.getAttribute("weight"));
-        resp.getWriter().println("height :"+session.getAttribute("height"));
-        resp.getWriter().println("BMI :"+session.getAttribute("BMI"));
-
+        resp.getWriter().println("session id" + session.getId());
+        resp.getWriter().println("cname :" + session.getAttribute("cname"));
+        resp.getWriter().println("weight :" + session.getAttribute("weight"));
+        resp.getWriter().println("height :" + session.getAttribute("height"));
+        resp.getWriter().println("BMI :" + session.getAttribute("BMI"));
+        resp.getWriter().println("authorCode :" + session.getAttribute("RandomNumber"));
     }
 
 }
