@@ -1,16 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <taglib version="2.1" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd">
-  <tlib-version>1.0</tlib-version>
-  <short-name>mytld_library</short-name>
-  <uri>/tlds/mytld_library</uri>
+    <tlib-version>1.0</tlib-version>
+    <short-name>mytld_library</short-name>
+    <uri>/tlds/mytld_library</uri>
   
-  <!-- hello tag-->
+    <!-- hello tag-->
     <tag>
-      <name>hello</name>
-      <tag-class>com.web.tag.HelloTag</tag-class>
-      <body-content>empty</body-content>
-      <description>晚安，現在時刻：....</description>
-      
-  </tag> 
+        <name>hello</name>
+        <tag-class>com.web.tag.HelloTag</tag-class>
+        <body-content>empty</body-content>
+        <description>晚安，現在時刻：....</description>
+    </tag> 
+  
+    <tag>
+        <name>welcome</name>
+        <tag-class>com.web.tag.WelcomeTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>welcome xxx</description>
+        <attribute>
+            <name>username</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>ExchangeRate</name>
+        <tag-class>com.web.tag.ExchangeRateTag</tag-class>
+        <body-content>empty</body-content>
+        <description>1 xxx = ?? xxx</description>
+        <attribute>
+            <name>symbol</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>LoopTag</name>
+        <tag-class>com.web.tag.LoopTag</tag-class>
+        <body-content>JSP</body-content>
+        <description>Loop xxx</description>
+        <attribute>
+            <name>count</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
  
 </taglib>
