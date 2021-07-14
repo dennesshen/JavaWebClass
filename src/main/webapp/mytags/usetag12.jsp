@@ -5,7 +5,7 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@taglib uri="/tlds/mytld_library" prefix="mytld_library"%>
+<%@taglib tagdir="/WEB-INF/tags" prefix="mytld_library"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,9 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>
-            <mytld_library:hello/> 
-                
-        </h1>
+        <mytld_library:piechart  work="20" commute="1" eat="2" sleep="3" watchTV="3"/>
+
     </body>
 </html>

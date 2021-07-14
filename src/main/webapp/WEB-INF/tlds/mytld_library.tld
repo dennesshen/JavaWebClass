@@ -47,5 +47,32 @@
             <rtexprvalue>true</rtexprvalue>
         </attribute>
     </tag>
+    
+    <!--CircleAreaTag-->
+    <tag>
+        <name>CircleAreaTag</name>
+        <tag-class>com.web.tag.circleAreaTag</tag-class>
+        <body-content>empty</body-content>
+        <description>calculate circle area or sphere area</description>
+        
+        <attribute>
+            <name>r</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+        <attribute>
+            <name>mode</name>
+            <required>true</required>
+            <rtexprvalue>true</rtexprvalue>
+        </attribute>
+    </tag>
+    
+    <tag>
+        <name>AddTag</name>
+        <tag-class>com.web.tag.addTag</tag-class>
+        <body-content>empty</body-content>
+        <description>add several numbers</description>
+        <dynamic-attributes>true</dynamic-attributes>
+    </tag>
  
 </taglib>

@@ -5,6 +5,7 @@
  */
 package com.web.tag;
 
+import java.util.Calendar;
 import java.util.Date;
 import javax.servlet.jsp.JspException;
 import javax.servlet.jsp.JspWriter;
@@ -16,12 +17,13 @@ import javax.servlet.jsp.tagext.Tag;
  * @author dennesshen
  */
 public class HelloTag implements Tag {
+
     private PageContext pageContext;
     private Tag parentTag;
 
     @Override
     public void setPageContext(PageContext pc) {
-        pageContext=pc;
+        pageContext = pc;
     }
 
     @Override
@@ -37,8 +39,16 @@ public class HelloTag implements Tag {
     @Override
     public int doStartTag() throws JspException {
         JspWriter out = pageContext.getOut();
+        Calendar cd = Calendar.getInstance();
+        int nowHour = cd.get(Calendar.HOUR_OF_DAY);
         try {
-            out.print("晚安 !");
+            if (nowHour < 12) {
+                out.print("早安 !");
+            } else if (12 <= nowHour && nowHour < 18) {
+                out.print("午安 !");
+            } else{
+                out.print("晚安 !");
+            }
         } catch (Exception e) {
         }
         return Tag.SKIP_BODY;
@@ -46,9 +56,9 @@ public class HelloTag implements Tag {
 
     @Override
     public int doEndTag() throws JspException {
-        JspWriter out =pageContext.getOut();
+        JspWriter out = pageContext.getOut();
         try {
-            out.print("現在時間："+new Date());
+            out.print("現在時間：" + new Date());
         } catch (Exception e) {
         }
         return Tag.EVAL_PAGE;
@@ -57,6 +67,5 @@ public class HelloTag implements Tag {
     @Override
     public void release() {
     }
-    
-    
+
 }

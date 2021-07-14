@@ -13,9 +13,16 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>
-            <mytld_library:hello/> 
-                
+        <h1> 
+            <mytld_library:CircleAreaTag r="5" mode="1"/>    
         </h1>
+        <h1> 
+            <mytld_library:CircleAreaTag r="6" mode="2"/>    
+        </h1>
+        <h1> 
+            <mytld_library:CircleAreaTag r="5" mode="3"/>    
+        </h1>
+
+
     </body>
 </html>
